@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/cacti_group.png</file>
+        <file>images/ptera_2.png</file>
+        <file>images/ptera_1.png</file>
+        <file>images/ground.png</file>
+        <file>images/dino_all.png</file>
+        <file>images/dino_6.png</file>
+        <file>images/dino_5.png</file>
+        <file>images/dino_4.png</file>
+        <file>images/dino_3.png</file>
+        <file>images/dino_2.png</file>
+        <file>images/dino_1.png</file>
+        <file>images/cloud.png</file>
+        <file>images/cacti_small_3.png</file>
+        <file>images/cacti_small_2.png</file>
+        <file>images/cacti_small_1.png</file>
+        <file>images/cacti_large_2.png</file>
+        <file>images/cacti_large_1.png</file>
+        <file>images/Dino_scene .png</file>
+        <file>images/Dino_scene2.png</file>
+    </qresource>
+</RCC>
