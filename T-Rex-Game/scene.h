@@ -14,19 +14,28 @@ public:
 
     void addDino();
 
+   // void startGame();
+
+   // bool getGameOn() const;
+   // void setGameOn(bool value);
 
 signals:
-
-private:
-    void setUpCactoTimer();
-
-    QTimer * cactoTimer;
-    DinoItem * dino;
 
     // QGraphicsScene interface
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+
+private:
+    void cleanCactos();
+    void setUpCactoTimer();
+    void freezeDinoAndCactosInPlace();
+
+    QTimer * cactoTimer;
+    DinoItem * dino;
+    bool gameOn;
+
+
 };
 
 #endif // SCENE_H

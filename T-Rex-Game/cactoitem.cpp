@@ -2,6 +2,7 @@
 #include <QRandomGenerator>
 #include <QGraphicsScene>
 #include <QDebug>
+#include <dinoitem.h>
 
 CactoItem::CactoItem() :
     cacto_small(new QGraphicsPixmapItem(QPixmap(":/images/cacti_small_1.png")))
@@ -37,6 +38,7 @@ CactoItem::CactoItem() :
 CactoItem::~CactoItem()
 {
     qDebug() << "Deleting Cacto!";
+    delete cacto_small;
 }
 
 qreal CactoItem::x() const
@@ -44,9 +46,31 @@ qreal CactoItem::x() const
     return m_x;
 }
 
+void CactoItem::freezeInPlace()
+{
+    xAnimation->stop();
+}
+
 void CactoItem::setX(qreal x)
 {
     qDebug() << "Cacto position : " << x;
     m_x = x;
+    if(collidesWithDino()){
+        emit collideFail();
+    }
     setPos(QPointF(0,0) + QPointF(x + xPos,0));
+}
+
+bool CactoItem::collidesWithDino()
+{
+    QList<QGraphicsItem*> collidingItems = cacto_small->collidingItems();
+    collidingItems.append(cacto_small->collidingItems());
+
+    foreach (QGraphicsItem * item, collidingItems) {
+        DinoItem * dinoItem = dynamic_cast<DinoItem*>(item);
+        if(dinoItem){
+            return true;
+        }
+    }
+    return false;
 }

@@ -14,15 +14,21 @@ public:
     explicit CactoItem();
     ~CactoItem();
 
-
     qreal x() const;
+
+    void freezeInPlace();
 
 public slots:
     void setX(qreal x);
 
 signals:
+    void collideFail();
 
 private:
+
+    bool collidesWithDino();
+
+
     QGraphicsPixmapItem * cacto_small;
     QPropertyAnimation * xAnimation;
     int xPos;

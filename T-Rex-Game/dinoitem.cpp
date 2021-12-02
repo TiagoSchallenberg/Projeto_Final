@@ -21,12 +21,11 @@ DinoItem::DinoItem(QPixmap pixmap) :
     yAnimation = new QPropertyAnimation(this, "y", this);
     yAnimation->setStartValue(scenePos().y());
     yAnimation->setEndValue(groundPosition);
-    yAnimation->setEasingCurve(QEasingCurve::InQuad);
+    yAnimation->setEasingCurve(QEasingCurve::OutQuad);
     yAnimation->setDuration(100);
 
     yAnimation->start();
 }
-
 
 qreal DinoItem::y() const
 {
@@ -40,17 +39,25 @@ void DinoItem::shootUp()
     qreal cursPosY = y();
 
     yAnimation->setStartValue(cursPosY);
-    yAnimation->setEndValue(cursPosY - scene()->sceneRect().height()/8);
+    yAnimation->setEndValue(cursPosY - scene()->sceneRect().height()/2); // Altura do pulo
     yAnimation->setEasingCurve(QEasingCurve::OutQuad);
-    yAnimation->setDuration(285);
+    yAnimation->setDuration(285);       // Tempo de duração do Pulo
 
     connect(yAnimation, &QPropertyAnimation::finished,[=](){
         fallToGroundIfNecessary();
     });
 
     yAnimation->start();
+}
 
+//void DinoItem::startRun()
+//{
+//    yAnimation->start();
+//}
 
+void DinoItem::freezeInPlace()
+{
+    yAnimation->stop();
 }
 
 void DinoItem::setY(qreal y)
@@ -67,7 +74,7 @@ void DinoItem::fallToGroundIfNecessary()
         yAnimation->setStartValue(y());
         yAnimation->setEasingCurve(QEasingCurve::InQuad);
         yAnimation->setEndValue(groundPosition);
-        yAnimation->setDuration(1000);
+        yAnimation->setDuration(570);       // Tempo de  queda do Dino
         yAnimation->start();
 
     }

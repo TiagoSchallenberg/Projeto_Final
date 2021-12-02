@@ -17,7 +17,9 @@ public:
 
     void shootUp();
 
+    // void startRun();
 
+    void freezeInPlace();
 
 public slots:
     void setY(qreal y);
