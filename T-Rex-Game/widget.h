@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include "scene.h"
+#include "connectarduino.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -18,13 +20,14 @@ public:
 
 private slots:
 
+    void on_pushButton_clicked();
 
-//    void on_startGameButton_clicked();
+    void on_Start_toolButton_clicked();
 
 private:
     Ui::Widget *ui;
 
-
+    ConnectArduino *formAdd;
     Scene * scene;
 };
 #endif // WIDGET_H

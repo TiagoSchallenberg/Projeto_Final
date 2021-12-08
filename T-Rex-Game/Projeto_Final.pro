@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     cactoitem.cpp \
+    connectarduino.cpp \
     dinoitem.cpp \
     main.cpp \
     scene.cpp \
@@ -24,11 +25,13 @@ SOURCES += \
 
 HEADERS += \
     cactoitem.h \
+    connectarduino.h \
     dinoitem.h \
     scene.h \
     widget.h
 
 FORMS += \
+    connectarduino.ui \
     widget.ui
 
 # Default rules for deployment.

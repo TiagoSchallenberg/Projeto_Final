@@ -21,8 +21,9 @@ Widget::Widget(QWidget *parent):
 
     ui->graphicsView->setScene(scene);
 
-
     scene->addDino();
+
+
 }
 
 Widget::~Widget()
@@ -30,8 +31,15 @@ Widget::~Widget()
     delete ui;
 }
 
+void Widget::on_pushButton_clicked()
+{
+    formAdd = new ConnectArduino(this);
+    formAdd->show();
+}
 
-//void Widget::on_startGameButton_clicked()
-//{
-//    scene->startGame();
-//}
+void Widget::on_Start_toolButton_clicked()
+{
+    scene->startGame();
+}
+
+

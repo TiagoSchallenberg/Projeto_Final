@@ -14,10 +14,10 @@ public:
 
     void addDino();
 
-   // void startGame();
+    void startGame();
 
-   // bool getGameOn() const;
-   // void setGameOn(bool value);
+    bool getGameOn() const;
+    void setGameOn(bool value);
 
 signals:
 

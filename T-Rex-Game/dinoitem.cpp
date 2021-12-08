@@ -50,10 +50,10 @@ void DinoItem::shootUp()
     yAnimation->start();
 }
 
-//void DinoItem::startRun()
-//{
-//    yAnimation->start();
-//}
+void DinoItem::startRun() // Apaga esse
+{
+    yAnimation->start();
+}
 
 void DinoItem::freezeInPlace()
 {

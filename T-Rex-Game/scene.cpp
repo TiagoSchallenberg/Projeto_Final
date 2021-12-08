@@ -15,29 +15,28 @@ void Scene::addDino()
     addItem(dino);
 }
 
-//void Scene::startGame()
-//{
-//    // Dino
-//    dino->startRun();
-//    //Cactos
-//    if(!cactoTimer->isActive()){
-//        cleanCactos();
-//        setGameOn(true);
-//        cactoTimer->start(1000);
-//    }
-//}
+void Scene::startGame()
+{
+    // Dino
+    dino->startRun();
+    //Cactos
+    if(!cactoTimer->isActive()){
+        cleanCactos();
+        setGameOn(true);
+        cactoTimer->start(1000); // Tempo de criação do cacto
+    }
+}
 
 void Scene::setUpCactoTimer()
 {
     cactoTimer = new QTimer(this);
     connect(cactoTimer,&QTimer::timeout,[=](){
 
-        CactoItem * cactoItem = new CactoItem(); // A cada 1s cria um novo cacto
+        CactoItem * cactoItem = new CactoItem();
         connect(cactoItem,&CactoItem::collideFail,[=](){
             cactoTimer->stop();
             freezeDinoAndCactosInPlace();
-          //setGameOn(false);
-
+            setGameOn(false);
         });
         addItem(cactoItem);
     });
@@ -62,20 +61,20 @@ void Scene::freezeDinoAndCactosInPlace()
     }
 }
 
-//bool Scene::getGameOn() const
-//{
-//    return gameOn;
-//}
+bool Scene::getGameOn() const
+{
+    return gameOn;
+}
 
-//void Scene::setGameOn(bool value)
-//{
-//    gameOn = value;
-//}
+void Scene::setGameOn(bool value)
+{
+    gameOn = value;
+}
 
 void Scene::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt::Key_Space){
-        //if(gameOn)
+        if(gameOn)
             dino->shootUp();
     }
     QGraphicsScene::keyPressEvent(event);
@@ -84,7 +83,7 @@ void Scene::keyPressEvent(QKeyEvent *event)
 void Scene::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton){
-        //if(gameOn)
+        if(gameOn)
             dino->shootUp();
     }
     QGraphicsScene::mousePressEvent(event);

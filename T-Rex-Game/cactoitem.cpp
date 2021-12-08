@@ -53,7 +53,7 @@ void CactoItem::freezeInPlace()
 
 void CactoItem::setX(qreal x)
 {
-    qDebug() << "Cacto position : " << x;
+    // qDebug() << "Cacto position : " << x;
     m_x = x;
     if(collidesWithDino()){
         emit collideFail();

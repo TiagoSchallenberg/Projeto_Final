@@ -17,7 +17,7 @@ public:
 
     void shootUp();
 
-    // void startRun();
+    void startRun();
 
     void freezeInPlace();
 
