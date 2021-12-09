@@ -5,6 +5,7 @@
 #include <QGraphicsPixmapItem>
 #include <QPropertyAnimation>
 
+
 class DinoItem : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

@@ -5,6 +5,8 @@
 #include <QTimer>
 #include "cactoitem.h"
 #include "dinoitem.h"
+#include "connectarduino.h"
+
 
 class Scene : public QGraphicsScene
 {
@@ -19,12 +21,15 @@ public:
     bool getGameOn() const;
     void setGameOn(bool value);
 
+    void jumpWithArduino();
+
 signals:
 
     // QGraphicsScene interface
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+
 
 private:
     void cleanCactos();

@@ -23,7 +23,8 @@ ConnectArduino::ConnectArduino(QWidget *parent) :
     ui->comboBox_baud->insertItems(0,bauds);
 
     connect(ui->Button_connenct,SIGNAL(clicked(bool)),this,SLOT(connctToSerial()));
-    connect(this,SIGNAL(startReading(bool)),this,SLOT(Reading()));
+    //connect(this,SIGNAL(startReading(bool)),this,SLOT(Reading()));
+    connect(this->serialPort,SIGNAL(readyRead()),this,SLOT(Reading()));
 
 }
 
@@ -56,10 +57,15 @@ void ConnectArduino::connctToSerial()
 
 void ConnectArduino::Reading()
 {
-    QByteArray readData = this->serialPort->readAll();  //
+    QByteArray readData = this->serialPort->readLine();
     qDebug() << readData;
-    while(this->serialPort->waitForReadyRead(5000)){    // Loop para a leitura ser continua
-        readData = this->serialPort->readAll();
-        qDebug() << readData;
-    }
+
+
+
+
+}
+
+void ConnectArduino::jumpWithArduino()
+{
+
 }

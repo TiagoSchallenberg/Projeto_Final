@@ -5,6 +5,7 @@
 #include <QtSerialPort/QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
 #include <QDebug>
+#include "dinoitem.h"
 
 namespace Ui {
 class ConnectArduino;
@@ -20,9 +21,13 @@ public:
 
     QSerialPort *serialPort;
 
+    void jumpWithArduino();
+
 public slots:
     void connctToSerial();
     void Reading();
+
+
 
 signals:
     void startReading(bool ok);

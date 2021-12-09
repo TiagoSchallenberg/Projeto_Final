@@ -20,7 +20,7 @@ public:
 
 private slots:
 
-    void on_pushButton_clicked();
+    void on_Connect_toolButton_clicked();
 
     void on_Start_toolButton_clicked();
 

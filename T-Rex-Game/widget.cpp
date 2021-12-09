@@ -31,7 +31,7 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::on_pushButton_clicked()
+void Widget::on_Connect_toolButton_clicked()
 {
     formAdd = new ConnectArduino(this);
     formAdd->show();

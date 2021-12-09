@@ -50,7 +50,7 @@ void DinoItem::shootUp()
     yAnimation->start();
 }
 
-void DinoItem::startRun() // Apaga esse
+void DinoItem::startRun()
 {
     yAnimation->start();
 }

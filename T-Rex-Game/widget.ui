@@ -65,14 +65,20 @@
      <x>20</x>
      <y>0</y>
      <width>231</width>
-     <height>31</height>
+     <height>32</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QToolButton" name="Connect_toolButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
-       <string>Conexão com Arduino</string>
+       <string>Conexão com o Arduino</string>
       </property>
      </widget>
     </item>

@@ -31,7 +31,6 @@ void Scene::setUpCactoTimer()
 {
     cactoTimer = new QTimer(this);
     connect(cactoTimer,&QTimer::timeout,[=](){
-
         CactoItem * cactoItem = new CactoItem();
         connect(cactoItem,&CactoItem::collideFail,[=](){
             cactoTimer->stop();
@@ -87,6 +86,16 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent *event)
             dino->shootUp();
     }
     QGraphicsScene::mousePressEvent(event);
+}
+
+void Scene::jumpWithArduino()
+{
+    ConnectArduino * readData;
+
+
+
+
+
 }
 
 void Scene::cleanCactos()
