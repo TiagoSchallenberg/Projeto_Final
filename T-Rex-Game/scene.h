@@ -25,7 +25,7 @@ public:
 
 signals:
 
-    // QGraphicsScene interface
+
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
@@ -35,11 +35,14 @@ private:
     void cleanCactos();
     void setUpCactoTimer();
     void freezeDinoAndCactosInPlace();
+    void showGameOverGraphics();
+    void hideGameOverGraphics();
 
     QTimer * cactoTimer;
     DinoItem * dino;
     bool gameOn;
 
+    QGraphicsPixmapItem * gameOver;
 
 };
 

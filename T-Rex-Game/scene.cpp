@@ -1,4 +1,5 @@
 #include "scene.h"
+#include "connectarduino.h"
 #include <QGraphicsSceneMouseEvent>
 #include <QKeyEvent>
 
@@ -23,6 +24,7 @@ void Scene::startGame()
     if(!cactoTimer->isActive()){
         cleanCactos();
         setGameOn(true);
+        //hideGameOverGraphics();
         cactoTimer->start(1000); // Tempo de criação do cacto
     }
 }
@@ -36,11 +38,12 @@ void Scene::setUpCactoTimer()
             cactoTimer->stop();
             freezeDinoAndCactosInPlace();
             setGameOn(false);
+            //showGameOverGraphics();
         });
         addItem(cactoItem);
     });
 
-    cactoTimer->start(1000);
+//    cactoTimer->start(1000);
 
 
 }
@@ -59,6 +62,23 @@ void Scene::freezeDinoAndCactosInPlace()
         }
     }
 }
+
+//void Scene::showGameOverGraphics()
+//{
+//    gameOver = new QGraphicsPixmapItem(QPixmap(":/images/game_over.png"));
+//    addItem(gameOver);
+//    gameOver->setPos(QPointF(0,0) - QPointF(gameOver->boundingRect().width()/2,
+//                                            gameOver->boundingRect().height()/2));
+//}
+
+//void Scene::hideGameOverGraphics()
+//{
+//    if(gameOver){
+//        removeItem(gameOver);
+//        delete gameOver;
+//        gameOver = nullptr;
+//    }
+//}
 
 bool Scene::getGameOn() const
 {
@@ -90,11 +110,6 @@ void Scene::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void Scene::jumpWithArduino()
 {
-    ConnectArduino * readData;
-
-
-
-
 
 }
 

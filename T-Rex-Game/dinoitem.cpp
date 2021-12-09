@@ -24,7 +24,9 @@ DinoItem::DinoItem(QPixmap pixmap) :
     yAnimation->setEasingCurve(QEasingCurve::OutQuad);
     yAnimation->setDuration(100);
 
-    yAnimation->start();
+//    yAnimation->start();
+
+
 }
 
 qreal DinoItem::y() const

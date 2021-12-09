@@ -20,5 +20,6 @@
         <file>images/Dino_scene .png</file>
         <file>images/Dino_scene2.png</file>
         <file>images/Dino_scene3.png</file>
+        <file>images/game_over.png</file>
     </qresource>
 </RCC>

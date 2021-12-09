@@ -16,8 +16,8 @@ Widget::Widget(QWidget *parent):
     scene->addItem(pixItem);
     pixItem->setPos(QPointF(0,0) - QPointF(pixItem->boundingRect().width()/2,
                                            pixItem->boundingRect().height()/2));
-    scene->addLine(-400,20,400,20,QPen(Qt::blue)); // Medidas do gráfico para X.
-    scene->addLine(20,-400,20,400,QPen(Qt::blue)); // Medidas do gráfico pra Y.
+//    scene->addLine(-400,20,400,20,QPen(Qt::blue)); // Medidas do gráfico para as linhas X.
+//    scene->addLine(20,-400,20,400,QPen(Qt::blue)); // Medidas do gráfico para as linhas Y.
 
     ui->graphicsView->setScene(scene);
 
